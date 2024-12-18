@@ -15,7 +15,12 @@ CFLAGS = -Wall -Wextra -Werror
 VPATH = ./
 
 SRCDIR = /home/jvarila/Repos/push_swap/
-SRC = $(SRCDIR)stack.c
+SRC =	$(SRCDIR)stack.c \
+	$(SRCDIR)push_operations.c \
+	$(SRCDIR)swap_operations.c \
+	$(SRCDIR)rotate_operations.c \
+	$(SRCDIR)reverse_rotate_operations.c
+
 LIBDIR = /home/jvarila/Repos/push_swap/libft/
 LIB = $(LIBDIR)libft.a
 

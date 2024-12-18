@@ -18,17 +18,80 @@ int	main(void)
 	t_stack	a;
 	t_stack	b;
 
-	a = (t_stack){.top = NULL, .size = 0, .error = 0};
-	b = (t_stack){.top = NULL, .size = 0, .error = 0};
+	a = (t_stack){0};
+	b = (t_stack){0};
+
 	push(&a, 1);
-	push(&a, -42);
-	push(&a, 420);
-	push(&b, 2);
-	push(&b, INT_MAX);
-	push(&b, 666);
+	push(&a, 2);
+	push(&a, 3);
+	push(&b, -1);
+	push(&b, -2);
+	push(&b, -3);
+
+	ft_printf("\n");
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
 	print_stack(&b);
 	ft_printf("\n");
+
+	sa(&a);
+	ft_printf("a: ");
 	print_stack(&a);
+	sb(&b);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	pa(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
+	print_stack(&b);
+	pb(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	ss(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	ra(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	rb(&a, &b);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	rr(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	rra(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	rrb(&a, &b);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
+	rrr(&a, &b);
+	ft_printf("a: ");
+	print_stack(&a);
+	ft_printf("b: ");
+	print_stack(&b);
+	ft_printf("\n");
+
 	ft_lstclear(&a.top, free);
 	ft_lstclear(&b.top, free);
 	return (0);
